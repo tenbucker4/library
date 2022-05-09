@@ -52,21 +52,35 @@ function displayBooks() {
         removeCards[i].remove();
     }
 
-    myLibrary.forEach(myLibrary => {
+    // Loop over library and display to book cards
+    let index = 0;
+    myLibrary.forEach(Library => {
         const card = document.createElement("div");
         card.classList.add("card");
         books.appendChild(card);
-        for (let key in myLibrary) {
-            const para = document.createElement("p");
-            para.textContent = (`${key}: ${myLibrary[key]}`);
-            card.appendChild(para);
-        }
+
+        // Create remove book button
         const removeBook = document.createElement("button");
         removeBook.classList.add(".remove");
         removeBook.textContent = "Remove Book";
+        removeBook.dataset.linkedArray = index;
+        index++;
         card.appendChild(removeBook);
+
+        // Remove book from library when button is clicked
+        removeBook.addEventListener("click", removeBookFromLibrary);
+
+        function removeBookFromLibrary() {
+            let fetchBookToRemove = removeBook.dataset.linkedArray;
+            myLibrary.splice(parseInt(fetchBookToRemove), 1);
+            card.remove();
+            displayBooks();
+        }
+
+        for (let key in Library) {
+            const para = document.createElement("p");
+            para.textContent = (`${key}: ${Library[key]}`);
+            card.appendChild(para);
+        }
     })
 }
-
-// Remove book from library when remove button is clicked
-const removeBook = document.query
