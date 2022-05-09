@@ -48,6 +48,9 @@ function addFormData() {
     let Pages = document.getElementById("Pages").value;
     let Read = document.getElementById("Read").value;
 
+    if ((Title == "") || (Author == "") || (Pages == "") || (Read == "")) {
+        return;
+    }
 
     addBookToLibrary(Title, Author, Pages, Read);
     document.getElementById("add-book").reset();
