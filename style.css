@@ -36,6 +36,15 @@
     grid-template-rows: repeat(1fr);
 }
 
+.bookshelf {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    align-items: center;
+    overflow: auto;
+    gap: 24px;
+    padding: 24px;
+}
+
 .card {
     border: 1px solid black;
     height: 350px;
@@ -48,6 +57,3 @@
     justify-content: space-evenly;
 }
 
-/* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-align-items: center;
-overflow: auto; */
