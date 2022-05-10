@@ -17,10 +17,23 @@
     padding: 24px;
 }
 
-.content {
+.menu {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    background-color: lightgray;
+    gap: 32px;
+    padding: 32px;
+}
+
+.book-form-container {
+
+}
+
+#add-book {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(1fr);
 }
 
 .card {
