@@ -31,6 +31,7 @@ form.addEventListener("submit", (e) => {
     myLibrary.push(newBook);
     renderBooks();
     form.reset();
+    document.querySelector(".book-form-container").style.display = "none";
 });
 
 
