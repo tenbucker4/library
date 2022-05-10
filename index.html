@@ -13,29 +13,29 @@
         <div class="header">
             <h1>Library</h1>
         </div>
-        <div class="side-bar">
-            <button type="button" class="new-book-btn" onclick="displayForm()">New Book</button>
-            <div class="book-form" style="display:none">
-                <form id="add-book" action="">
-                    <label for="Title">Title:</label>
-                    <input type="text" id="Title" name="Title" placeholder="Book Title">
-                    <label for="Author">Author:</label>
-                    <input type="text" id="Author" name="Author" placeholder="Author">
-                    <label for="Pages">Pages:</label>
-                    <input type="number" id="Pages" name="Pages" placeholder="Number of Pages">
-                    <label for="Read">Read?</label>
-                    <select name="Read" id="Read">
-                        <option value="Yes">Yes</option>
-                        <option value="No">No</option>
-                    </select>
-                    <!-- <input type="text" id="Read" name="Read" placeholder="Yes / No"> -->
-                    <button type="button" class="submit-btn" onclick="addFormData()">Add to Library</button>
-                    <button type="reset" id="clear">Clear Form</button>
-                </form>
-            </div>
-        </div>
         <div class="content">
-
+            <div class="button-container">
+                <button type="button" class="new-book-btn">New Book</button>
+            </div>
+            <div class="pop-up" style="opacity: 1;">
+                <div class="book-form">
+                    <form id="add-book" action="">
+                        <label for="Title">Title:</label>
+                        <input type="text" id="Title" name="Title" placeholder="Book Title">
+                        <label for="Author">Author:</label>
+                        <input type="text" id="Author" name="Author" placeholder="Author">
+                        <label for="Pages">Pages:</label>
+                        <input type="number" id="Pages" name="Pages" placeholder="Number of Pages">
+                        <label for="Read">Read?</label>
+                        <select name="Read" id="Read">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                        <button type="button" class="submit-btn">Add to Library</button>
+                        <button type="reset" id="clear">Clear Form</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </body>
