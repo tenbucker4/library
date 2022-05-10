@@ -49,21 +49,39 @@ function renderBooks() {
         bookCard.classList.add("card");
         bookshelf.appendChild(bookCard);
 
-        const titleDiv = document.createElement("h3");
+        const titleDiv = document.createElement("h2");
         titleDiv.textContent = newBook.title;
         bookCard.appendChild(titleDiv);
 
-        const authorDiv = document.createElement("h4");
+        const authorDiv = document.createElement("h3");
         authorDiv.textContent = newBook.author;
         bookCard.appendChild(authorDiv);
 
-        const pagesDiv = document.createElement("h4");
+        const pagesDiv = document.createElement("p");
         pagesDiv.textContent = newBook.pages + " pages";
         bookCard.appendChild(pagesDiv);
 
-        const readDiv = document.createElement("h4");
+        const readDiv = document.createElement("p");
         readDiv.textContent = "Read? " + newBook.read;
         bookCard.appendChild(readDiv);
+
+        // Add a button to toggle read status of each book
+        const toggleReadBtn = document.createElement("button");
+        toggleReadBtn.classList.add("read-btn");
+        toggleReadBtn.textContent = "Read/Unread";
+        bookCard.appendChild(toggleReadBtn);
+        toggleReadBtn.addEventListener("click", () => {
+            if (newBook.read === "Yes") {
+                newBook.read = "No";
+            } else {
+                newBook.read = "Yes";
+            }
+            renderBooks();
+        })
+
+        const deleteBookBtn = document.createElement("button");
+        deleteBookBtn.classList.add("delete-btn");
+        deleteBookBtn.textContent = "Delete";
+        bookCard.appendChild(deleteBookBtn);
     })
-    
 }

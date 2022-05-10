@@ -26,8 +26,11 @@
     padding: 32px;
 }
 
-.book-form-container {
-
+.new-book-btn {
+    border-radius: 5px;
+    background-color: green;
+    color: white;
+    font-size: 1.2rem;
 }
 
 #add-book {
@@ -47,7 +50,7 @@
 
 .card {
     border: 1px solid black;
-    height: 350px;
+    height: 300px;
     padding: 16px;
     border-radius: 5px;
     display: flex;
