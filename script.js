@@ -14,6 +14,7 @@ function displayForm() {
 }
 
 // Submit book to library when submit button is clicked
+const form = document.getElementById("add-book");
 const submitBook = document.querySelector(".submit-btn");
 
 function addFormData() {
@@ -27,13 +28,13 @@ function addFormData() {
     }
 
     addBookToLibrary(Title, Author, Pages, Read);
-    document.getElementById("add-book").reset();
 }
 
 function addBookToLibrary(Title, Author, Pages, Read) {
     let book = new Book(Title, Author, Pages, Read);
     myLibrary.push(book);
     displayBooks();
+    form.reset();
 }
 
 // Clear Form
@@ -61,7 +62,7 @@ function displayBooks() {
 
         // Create remove book button
         const removeBook = document.createElement("button");
-        removeBook.classList.add(".remove");
+        removeBook.classList.add(".remove-book-btn");
         removeBook.textContent = "Remove Book";
         removeBook.dataset.linkedArray = index;
         index++;
