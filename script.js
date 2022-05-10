@@ -20,19 +20,19 @@ function displayForm() {
 // Submit book to library when submit button is clicked
 const form = document.getElementById("add-book");
 let submitBook = document.getElementById("submit-btn");
-submitBook.addEventListener("click", addBookToLibrary);
-
-function addBookToLibrary() {
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
     const title = document.getElementById("Title").value;
     const author = document.getElementById("Author").value;
     const pages = document.getElementById("Pages").value;
     const read = document.getElementById("Read").value;
+
     let newBook = new Book(title, author, pages, read);
     myLibrary.push(newBook);
-    console.log(myLibrary);
-    form.reset();
     renderBooks();
-}
+    form.reset();
+});
+
 
 // Display books in library in browser
 function renderBooks() {
@@ -44,6 +44,7 @@ function renderBooks() {
     }
 
     // Loop over array and display each entry in bookshelf
+    let index = 0;
     myLibrary.forEach((newBook) => {
         const bookCard = document.createElement("div");
         bookCard.classList.add("card");
@@ -82,6 +83,15 @@ function renderBooks() {
         const deleteBookBtn = document.createElement("button");
         deleteBookBtn.classList.add("delete-btn");
         deleteBookBtn.textContent = "Delete";
+        deleteBookBtn.dataset.linkedArray = index;
+        index++;
         bookCard.appendChild(deleteBookBtn);
+        let bookToRemove = deleteBookBtn.dataset.linkedArray;
+        deleteBookBtn.addEventListener("click", () => {
+            bookCard.remove();
+            myLibrary.splice(bookToRemove, 1);
+            console.log(bookToRemove);
+            renderBooks();
+        })
     })
 }

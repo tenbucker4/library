@@ -20,17 +20,17 @@
             <div class="book-form-container" style="display:none">
                 <form id="add-book" action="">
                     <label for="Title">Title:</label>
-                    <input type="text" id="Title" name="Title" placeholder="Book Title" autocomplete="off">
+                    <input type="text" id="Title" name="Title" placeholder="Book Title" autocomplete="off" required>
                     <label for="Author">Author:</label>
-                    <input type="text" id="Author" name="Author" placeholder="Author" autocomplete="off">
+                    <input type="text" id="Author" name="Author" placeholder="Author" autocomplete="off" required>
                     <label for="Pages">Pages:</label>
-                    <input type="number" id="Pages" name="Pages" placeholder="Number of Pages" autocomplete="off">
+                    <input type="number" id="Pages" name="Pages" placeholder="Number of Pages" autocomplete="off" required>
                     <label for="Read">Read?</label>
                     <select name="Read" id="Read">
                         <option value="Yes">Yes</option>
                         <option value="No">No</option>
                     </select>
-                    <button type="button" id="submit-btn">Add to Library</button>
+                    <input type="submit" id="submit-btn" value="submit">
                     <button type="reset" id="clear">Clear Form</button>
                 </form>
             </div>
