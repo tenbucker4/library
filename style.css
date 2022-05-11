@@ -5,58 +5,153 @@
     font-family: 'Roboto', sans-serif;
 }
 
+body {
+    background-color: #f8fafc;
+}
+
 .container {
     display: flex;
     flex-direction: column;
 }
 
+/* Header */
 .header {
-    background-color: aqua;
+    background-color: #334155;
+    color: #f8fafc;
     display: flex;
     justify-content: center;
     padding: 24px;
 }
 
+/* Add book form */
 .menu {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: lightgray;
+    background-color: #f8fafc;
     gap: 32px;
     padding: 32px;
 }
 
 .new-book-btn {
     border-radius: 5px;
+    border: 1px solid green;
     background-color: green;
-    color: white;
+    color: #f8fafc;
     font-size: 1.2rem;
 }
 
-#add-book {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(1fr);
+.new-book-btn:hover {
+    background-color: #f8fafc;
+    color: green;
+    cursor: pointer;
 }
 
+#add-book {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.form-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-section label {
+    font-size: 0.75rem;
+}
+
+.form-section input,
+.form-section select {
+    width: 15rem;
+    padding: 8px;
+}
+
+.form-buttons {
+    padding: 8px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#submit-btn {
+    border-radius: 5px;
+    border: 1px solid green;
+    background-color: green;
+    color: #f8fafc;
+    font-size: 0.9rem;
+}
+
+#submit-btn:hover {
+    cursor: pointer;
+    background-color: #f8fafc;
+    color: green;
+}
+
+#clear {
+    border-radius: 5px;
+    border: 1px solid red;
+    background-color: red;
+    color: #f8fafc;
+    font-size: 0.9rem;
+}
+
+#clear:hover {
+    cursor: pointer;
+    background-color: #f8fafc;
+    color: red;
+}
+
+/* Bookshelf */
 .bookshelf {
+    background-color: #f8fafc;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     align-items: center;
     overflow: auto;
     gap: 24px;
-    padding: 24px;
+    padding: 0px 24px 24px 24px;
 }
 
 .card {
-    border: 1px solid black;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    background-color: #33415580;
+    color: #f8fafc;
     height: 300px;
     padding: 16px;
-    border-radius: 5px;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     gap: 16px;
     align-items: center;
     justify-content: space-evenly;
+}
+
+.read-btn {
+    border-radius: 5px;
+    border: 1px solid #334155;
+    background-color: #334155;
+    color: #f8fafc;
+    font-size: 0.8rem;
+}
+
+.read-btn:hover {
+    cursor: pointer;
+    background-color: #f8fafc;
+    color: #334155;
+}
+
+.delete-btn {
+    border-radius: 5px;
+    border: 1px solid red;
+    background-color: red;
+    color: #f8fafc;
+    font-size: 0.8rem;
+}
+
+.delete-btn:hover {
+    cursor: pointer;
+    background-color: #f8fafc;
+    color: red;
 }
 
