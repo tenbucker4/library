@@ -32,6 +32,7 @@ form.addEventListener("submit", (e) => {
     renderBooks();
     form.reset();
     document.querySelector(".book-form-container").style.display = "none";
+    saveData();
 });
 
 
@@ -78,6 +79,7 @@ function renderBooks() {
             } else {
                 newBook.read = "Yes";
             }
+            saveData();
             renderBooks();
         })
 
@@ -92,7 +94,26 @@ function renderBooks() {
             bookCard.remove();
             myLibrary.splice(bookToRemove, 1);
             console.log(bookToRemove);
+            saveData();
             renderBooks();
         })
+        saveData();
     })
 }
+
+function saveData() {
+    localStorage.setItem(`myLibrary`, JSON.stringify(myLibrary));
+}
+
+function restore() {
+    if (!localStorage.myLibrary) {
+        renderBooks();
+    } else {
+        let objects = localStorage.getItem("myLibrary");
+        objects = JSON.parse(objects);
+        myLibrary = objects;
+        renderBooks();
+    }
+}
+
+restore();

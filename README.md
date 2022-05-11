@@ -1,3 +1,3 @@
 A library page created using HTML, CSS and Javascript! Users are able to add their book information to a form (title, author, pages and read/unread) and add them to a virtual bookshelf. Once added to the bookshelf, users have the option of toggling the read status of each book and deleting them from the bookshelf.
 
-This project allowed me to practice combining CSS Grid and Flexbox, DOM element creation/manipulation, and JS object/constructors.
+This project allowed me to practice combining CSS Grid and Flexbox, DOM element creation/manipulation, and JS object/constructors. I also learned how to store objects to localStorage to retain stored data upon reloading the page.
